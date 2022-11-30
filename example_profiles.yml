@@ -1,0 +1,26 @@
+snowflake_finserv_demo:
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWSQL_ACCOUNT') }}"
+      user: "{{ env_var('SNOWSQL_USER') }}"
+      password: "{{ env_var('SNOWSQL_PASSWORD') }}"
+      role: "{{ env_var('SNOWSQL_ROLE') }}"
+      database: "{{ env_var('SNOWSQL_DATABASE') }}"
+      warehouse: "{{ env_var('SNOWSQL_WAREHOUSE') }}"
+      schema: felix_flory_dbt_finserv_demo
+      threads: 4
+      client_session_keep_alive: False
+  target: dev
+
+databricks_finserv_demo:
+  outputs:
+    dev:
+      type: databricks
+      catalog: null
+      host: "{{ env_var('DATABRICK_HOST') }}"
+      http_path: "{{ env_var('DATABRICK_HTTP_PATH') }}"
+      schema: felix_flory_dbt_finserv_demo
+      threads: 4
+      token: "{{ env_var('DBT_ENV_SECRET_DATABRICK_TOKEN') }}"
+  target: dev
