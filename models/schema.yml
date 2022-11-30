@@ -8,3 +8,17 @@ models:
         description: order_number should not be null
         tests:
           - not_null
+  - name: sales_order_in_chicago
+    description: has to have customer_id
+    columns:
+      - name: customer_id
+        description: customer_id should not be null
+        tests:
+          - not_null
+  - name: sales_order_in_la
+    description: has to have customer_id
+    columns:
+      - name: customer_id
+        description: customer_id should not be null
+        tests:
+          - not_null
