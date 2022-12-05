@@ -4,11 +4,10 @@ Welcome to your new dbt project!
 - dbt-core
 - dbt-cloud at https://cloud.getdbt.com/next/accounts/72722/projects/189257/develop
 
-### Using the starter project
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Prep Tables in Databricks:
+
+see notebooks/dbtables.py
 
 
 ### Resources:
