@@ -1,7 +1,9 @@
 dbt deps
-dbt debug
-dbt compile
-dbt run
+# dbt debug
+# dbt run -m SELECT sales_orders
 # dbt run -m SELECT customers
-dbt build
-dbt test
+# dbt run -m SELECT sales_orders_cleaned
+dbt run
+# dbt compile
+# dbt test
+# dbt build

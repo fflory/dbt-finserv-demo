@@ -10,6 +10,7 @@ vars:
   source_db: 'felix_flory_dbretail_input'
 
 # This setting configures which "profile" dbt uses for this project.
+# profile: 'snowflake_finserv_demo'
 profile: 'databricks_finserv_demo'
 
 # These configurations specify where dbt should look for different types of files.
