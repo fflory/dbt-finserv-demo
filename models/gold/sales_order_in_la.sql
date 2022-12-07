@@ -6,7 +6,8 @@ SELECT
 FROM (
   SELECT
     city, order_date, customer_id, customer_name,
-    explode(ordered_products) as ordered_products_explode
+    -- explode(ordered_products) as ordered_products_explode
+    flatten(ordered_products) as ordered_products_explode
   FROM {{ ref('sales_orders_cleaned') }}
    WHERE city = 'Los Angeles')
 GROUP BY order_date, city, customer_id, customer_name, ordered_products_explode.curr
