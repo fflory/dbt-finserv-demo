@@ -1,10 +1,13 @@
 # Databricks notebook source
-display(dbutils.fs.ls("/databricks-datasets/retail-org/customers"))
-display(dbutils.fs.ls("/databricks-datasets/retail-org/sales_orders"))
+import yaml
+from pathlib import Path
+conf = yaml.safe_load(Path('../dbt_project.yml').read_text())
+project_db_input = conf.get("vars").get("source_db")
 
 # COMMAND ----------
 
-project_db_input = "felix_flory_dbretail_input"
+display(dbutils.fs.ls("/databricks-datasets/retail-org/customers"))
+display(dbutils.fs.ls("/databricks-datasets/retail-org/sales_orders"))
 
 # COMMAND ----------
 
@@ -29,12 +32,6 @@ CREATE TABLE {project_db_input}.sales_orders_raw
 USING JSON
 LOCATION '/databricks-datasets/retail-org/sales_orders/'
 """)
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC 
-# MAGIC show tables in felix_flory_dbretail_input
 
 # COMMAND ----------
 
