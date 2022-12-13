@@ -2,7 +2,7 @@ Welcome to your new dbt project!
 
 ## Prep Tables in Databricks:
 
-see notebooks/dbtables.py
+see [notebooks/dbtables.py](notebooks/dbtables.py)
 
 
 ### Resources:
