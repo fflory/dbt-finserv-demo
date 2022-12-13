@@ -1,8 +1,10 @@
 # Databricks notebook source
 import yaml
 from pathlib import Path
+
 conf = yaml.safe_load(Path('../dbt_project.yml').read_text())
 project_db_input = conf.get("vars").get("source_db")
+print(project_db_input)
 
 # COMMAND ----------
 
