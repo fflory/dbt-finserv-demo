@@ -1,10 +1,5 @@
 Welcome to your new dbt project!
 
-2 deployments:
-- dbt-core
-- dbt-cloud at https://cloud.getdbt.com/next/accounts/72722/projects/189257/develop
-
-
 ## Prep Tables in Databricks:
 
 see notebooks/dbtables.py
