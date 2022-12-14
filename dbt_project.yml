@@ -7,7 +7,7 @@ version: '1.0.0'
 config-version: 2
 
 vars:
-  source_db: 'felix_flory_dbt_finserv_demo'
+  source_db: 'uc_demos_felix_flory.felix_flory_dbt_finserv_demo'
 
 # This setting configures which "profile" dbt uses for this project.
 # profile: 'snowflake_finserv_demo'
