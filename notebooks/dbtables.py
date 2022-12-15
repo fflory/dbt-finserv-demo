@@ -32,11 +32,15 @@ spark.sql(f"DROP TABLE IF EXISTS {project_db_input}.sales_orders_raw")
  .saveAsTable(name = "uc_demos_felix_flory.felix_flory_dbt_finserv_demo.customers_raw")
 )
 
-(spark.read.format("json")#.option("header", "true")
+(spark.read.format("json")
  .load("/databricks-datasets/retail-org/sales_orders/")
  .write.mode("overwrite")
  .saveAsTable(name = "uc_demos_felix_flory.felix_flory_dbt_finserv_demo.sales_orders_raw")
 )
+
+# COMMAND ----------
+
+display(spark.sql("select * from uc_demos_felix_flory.felix_flory_dbt_finserv_demo.sales_orders_raw where order_datetime is null"))
 
 # COMMAND ----------
 
