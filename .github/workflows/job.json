@@ -8,9 +8,7 @@
                     "commands": [
                         "dbt deps",
                         "dbt run"
-                    ],
-                    "schema": "felix_flory_dbt_finserv_demo",
-                    "warehouse_id": "3feb19a810fe2860"
+                    ]
                 },
                 "existing_cluster_id": "1027-194820-k28f1eo1",
                 "libraries": [
@@ -19,9 +17,7 @@
                             "package": "dbt-databricks>=1.0.0,<2.0.0"
                         }
                     }
-                ],
-                "timeout_seconds": 0,
-                "email_notifications": {}
+                ]
             }
         ],
     "git_source": {
