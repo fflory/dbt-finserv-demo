@@ -59,5 +59,27 @@ display(spark.sql("select * from uc_demos_felix_flory.felix_flory_dbt_finserv_de
 
 # COMMAND ----------
 
-# DBTITLE 1,Cleanup
+# DBTITLE 1,Cleanup dbt
+spark.sql(f"DROP VIEW IF EXISTS {project_db_input}.customers")
+spark.sql(f"DROP VIEW IF EXISTS {project_db_input}.sales_orders")
+spark.sql(f"DROP VIEW IF EXISTS {project_db_input}.sales_orders_cleaned")
+spark.sql(f"DROP VIEW IF EXISTS {project_db_input}.sales_order_in_chicago")
+spark.sql(f"DROP VIEW IF EXISTS {project_db_input}.sales_order_in_la")
+
+# spark.sql(f"DROP TABLE IF EXISTS {project_db_input}.imid_confict_list")
 # spark.sql(f"drop schema if exists {project_db_input} cascade")
+
+# COMMAND ----------
+
+dlt_target_schema = "felix_flory_dbt_finserv_demo"
+
+# COMMAND ----------
+
+# DBTITLE 1,Cleanup dlt
+spark.sql(f"DROP TABLE IF EXISTS {dlt_target_schema}.customers")
+spark.sql(f"DROP TABLE IF EXISTS {dlt_target_schema}.sales_orders_raw")
+spark.sql(f"DROP TABLE IF EXISTS {dlt_target_schema}.sales_orders_cleaned")
+spark.sql(f"DROP TABLE IF EXISTS {dlt_target_schema}.sales_order_in_chicago")
+spark.sql(f"DROP TABLE IF EXISTS {dlt_target_schema}.sales_order_in_la")
+
+# spark.sql(f"drop schema if exists {dlt_target_schema} cascade")
